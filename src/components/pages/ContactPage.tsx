@@ -271,8 +271,8 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-electric-blue mt-1" />
                     <div>
                       <p className="font-heading font-semibold text-foreground">Email</p>
-                      <p className="text-light-gray font-paragraph">hello@aisolutions.com</p>
-                      <p className="text-light-gray font-paragraph">support@aisolutions.com</p>
+                      <p className="text-light-gray font-paragraph">hello@zapshere.com</p>
+                      <p className="text-light-gray font-paragraph">support@zapshere.com</p>
                     </div>
                   </div>
                   

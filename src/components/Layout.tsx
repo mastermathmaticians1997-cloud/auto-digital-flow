@@ -57,7 +57,7 @@ export default function Layout() {
             <Link to="/" className="flex items-center space-x-2">
               <Bot className="h-8 w-8 text-electric-blue" />
               <span className="text-xl font-heading font-bold bg-gradient-to-r from-electric-blue to-neon-green bg-clip-text text-transparent">
-                AI Solutions
+                Zapshere
               </span>
             </Link>
 
@@ -130,7 +130,7 @@ export default function Layout() {
               <Link to="/" className="flex items-center space-x-2 mb-4">
                 <Bot className="h-8 w-8 text-electric-blue" />
                 <span className="text-xl font-heading font-bold bg-gradient-to-r from-electric-blue to-neon-green bg-clip-text text-transparent">
-                  AI Solutions
+                  Zapshere
                 </span>
               </Link>
               <p className="text-light-gray font-paragraph mb-6 max-w-md">
@@ -226,7 +226,7 @@ export default function Layout() {
           {/* Bottom Bar */}
           <div className="border-t border-light-gray/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-light-gray font-paragraph text-sm">
-              © 2024 AI Solutions. All rights reserved.
+              © 2024 Zapshere. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy" className="text-light-gray hover:text-electric-blue transition-colors font-paragraph text-sm">
