@@ -219,14 +219,14 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 px-4">
+      <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-electric-blue">
               Our Services
@@ -236,7 +236,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {services.map((service, index) => (
               <motion.div
                 key={service._id}
@@ -246,9 +246,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <Card className="bg-background/50 border-light-gray/20 hover:border-electric-blue/50 transition-all duration-300 h-full group">
-                  <CardContent className="p-8">
+                  <CardContent className="p-10">
                     {service.serviceImage && (
-                      <div className="mb-6 overflow-hidden rounded-lg">
+                      <div className="mb-8 overflow-hidden rounded-lg">
                         <Image
                           src={service.serviceImage}
                           alt={service.serviceName || 'Service'}
@@ -258,10 +258,10 @@ export default function HomePage() {
                         />
                       </div>
                     )}
-                    <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                    <h3 className="text-xl font-heading font-semibold mb-6 text-foreground">
                       {service.serviceName}
                     </h3>
-                    <p className="text-light-gray font-paragraph mb-6">
+                    <p className="text-light-gray font-paragraph mb-8 leading-relaxed">
                       {service.description}
                     </p>
                     <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10">
@@ -278,14 +278,14 @@ export default function HomePage() {
       </section>
 
       {/* Products Showcase */}
-      <section className="py-24 px-4 bg-background/50">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-background/50">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neon-green">
               AI Products & Tools
@@ -295,7 +295,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {products.map((product, index) => (
               <motion.div
                 key={product._id}
@@ -319,17 +319,17 @@ export default function HomePage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                       </div>
                     )}
-                    <div className="p-8">
-                      <div className="flex items-center gap-2 mb-4">
+                    <div className="p-10">
+                      <div className="flex items-center gap-2 mb-6">
                         <Bot className="h-5 w-5 text-electric-blue" />
                         <span className="text-sm font-paragraph text-electric-blue uppercase tracking-wider">
                           {product.productType}
                         </span>
                       </div>
-                      <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                      <h3 className="text-xl font-heading font-semibold mb-6 text-foreground">
                         {product.productName}
                       </h3>
-                      <p className="text-light-gray font-paragraph mb-6">
+                      <p className="text-light-gray font-paragraph mb-8 leading-relaxed">
                         {product.shortDescription}
                       </p>
                       <Button asChild className="bg-neon-green text-background hover:bg-neon-green/90">
@@ -347,14 +347,14 @@ export default function HomePage() {
       </section>
 
       {/* Industries */}
-      <section className="py-24 px-4">
+      <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">
               Industries We Serve
@@ -364,7 +364,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {industries.map((industry, index) => (
               <motion.div
                 key={industry._id}
@@ -376,9 +376,9 @@ export default function HomePage() {
               >
                 <Link to="/industries" className="block">
                   <Card className="bg-background/30 border-light-gray/20 hover:border-primary/50 transition-all duration-300 text-center group">
-                    <CardContent className="p-6">
+                    <CardContent className="p-8">
                       {industry.industryImage && (
-                        <div className="mb-4 overflow-hidden rounded-lg">
+                        <div className="mb-6 overflow-hidden rounded-lg">
                           <Image
                             src={industry.industryImage}
                             alt={industry.industryName || 'Industry'}
@@ -401,14 +401,14 @@ export default function HomePage() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-24 px-4 bg-background/50">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-background/50">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-electric-blue">
               Success Stories
@@ -418,7 +418,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {caseStudies.map((study, index) => (
               <motion.div
                 key={study._id}
@@ -428,9 +428,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <Card className="bg-background border-light-gray/20 hover:border-electric-blue/50 transition-all duration-300 h-full">
-                  <CardContent className="p-8">
+                  <CardContent className="p-10">
                     {study.mainImage && (
-                      <div className="mb-6 overflow-hidden rounded-lg">
+                      <div className="mb-8 overflow-hidden rounded-lg">
                         <Image
                           src={study.mainImage}
                           alt={study.projectTitle || 'Case Study'}
@@ -440,20 +440,20 @@ export default function HomePage() {
                         />
                       </div>
                     )}
-                    <div className="flex items-center gap-2 mb-4">
+                    <div className="flex items-center gap-2 mb-6">
                       <BarChart3 className="h-5 w-5 text-neon-green" />
                       <span className="text-sm font-paragraph text-neon-green uppercase tracking-wider">
                         {study.industry}
                       </span>
                     </div>
-                    <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                    <h3 className="text-xl font-heading font-semibold mb-6 text-foreground">
                       {study.projectTitle}
                     </h3>
-                    <p className="text-light-gray font-paragraph mb-6">
+                    <p className="text-light-gray font-paragraph mb-8 leading-relaxed">
                       {study.problemDescription}
                     </p>
                     {study.roiPercentage && (
-                      <div className="flex items-center gap-2 mb-6">
+                      <div className="flex items-center gap-2 mb-8">
                         <span className="text-2xl font-heading font-bold text-neon-green">
                           {study.roiPercentage}% ROI
                         </span>
@@ -473,14 +473,14 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-4">
+      <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neon-green">
               What Our Clients Say
@@ -490,7 +490,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial._id}
@@ -500,8 +500,8 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <Card className="bg-background/30 border-light-gray/20 h-full">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-1 mb-4">
+                  <CardContent className="p-10">
+                    <div className="flex items-center gap-1 mb-6">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
@@ -511,7 +511,7 @@ export default function HomePage() {
                         />
                       ))}
                     </div>
-                    <p className="text-light-gray font-paragraph mb-6 italic">
+                    <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed">
                       "{testimonial.testimonialText}"
                     </p>
                     <div className="flex items-center gap-4">
@@ -542,7 +542,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-gradient-to-r from-primary/20 via-electric-blue/20 to-neon-green/20">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-electric-blue/20 to-neon-green/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -550,19 +550,19 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 text-foreground">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl font-paragraph text-light-gray mb-8 max-w-2xl mx-auto">
+            <p className="text-xl font-paragraph text-light-gray mb-12 max-w-2xl mx-auto leading-relaxed">
               Join hundreds of companies already leveraging AI to drive growth and efficiency
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 text-lg">
                 <Link to="/contact">
                   Start Your AI Journey <Zap className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-10 py-4 text-lg">
                 <Link to="/pricing">
                   View Pricing
                 </Link>
