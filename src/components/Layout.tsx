@@ -1,19 +1,28 @@
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Bot, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Menu, X, Bot, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
   { name: 'Services', href: '/services' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'Case Studies', href: '/case-studies' },
   { name: 'Resources', href: '/resources' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Contact', href: '/contact' },
+];
+
+const solutionsDropdown = [
+  { name: 'Industries', href: '/industries' },
+  { name: 'Case Studies', href: '/case-studies' },
 ];
 
 const footerLinks = {
@@ -62,12 +71,12 @@ export default function Layout() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-10">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-paragraph transition-colors duration-200 ${
+                  className={`font-paragraph transition-colors duration-200 hover:scale-105 transform ${
                     location.pathname === item.href
                       ? 'text-electric-blue'
                       : 'text-light-gray hover:text-electric-blue'
@@ -76,7 +85,36 @@ export default function Layout() {
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              
+              {/* Solutions Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`font-paragraph transition-colors duration-200 hover:scale-105 transform flex items-center space-x-1 ${
+                  location.pathname === '/industries' || location.pathname === '/case-studies'
+                    ? 'text-electric-blue'
+                    : 'text-light-gray hover:text-electric-blue'
+                }`}>
+                  <span>Solutions</span>
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border-light-gray/20 mt-2">
+                  {solutionsDropdown.map((item) => (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <Link
+                        to={item.href}
+                        className={`font-paragraph transition-colors duration-200 w-full ${
+                          location.pathname === item.href
+                            ? 'text-electric-blue'
+                            : 'text-light-gray hover:text-electric-blue'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground ml-4">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>
@@ -89,7 +127,7 @@ export default function Layout() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-background border-light-gray/20">
-                <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex flex-col space-y-6 mt-8">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
@@ -104,7 +142,27 @@ export default function Layout() {
                       {item.name}
                     </Link>
                   ))}
-                  <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4">
+                  
+                  {/* Mobile Solutions Section */}
+                  <div className="border-t border-light-gray/20 pt-4">
+                    <h3 className="text-foreground font-heading font-semibold mb-3">Solutions</h3>
+                    {solutionsDropdown.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`block font-paragraph text-lg transition-colors duration-200 mb-3 ${
+                          location.pathname === item.href
+                            ? 'text-electric-blue'
+                            : 'text-light-gray hover:text-electric-blue'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                  
+                  <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground mt-6">
                     <Link to="/contact" onClick={() => setIsOpen(false)}>
                       Get Started
                     </Link>
@@ -209,7 +267,10 @@ export default function Layout() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-electric-blue" />
-                  <span className="text-light-gray font-paragraph">hello@aisolutions.com</span>
+                  <div className="flex flex-col">
+                    <span className="text-light-gray font-paragraph">hello@zapshere.com</span>
+                    <span className="text-light-gray font-paragraph">support@zapshere.com</span>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-electric-blue" />
