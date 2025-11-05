@@ -40,7 +40,7 @@ const useAnimatedDataStream = () => {
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
         size: Math.random() * 3 + 1,
-        color: Math.random() > 0.5 ? '#8B5CF6' : '#C084FC',
+        color: Math.random() > 0.5 ? '#8B5CF6' : '#3B82F6',
         opacity: Math.random() * 0.8 + 0.2,
       });
     }
@@ -183,7 +183,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-primary to-brand-purple-accent bg-clip-text text-transparent"
+              className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-brand-blue to-brand-blue-light bg-clip-text text-transparent"
             >
               AI-Powered Solutions
             </motion.h1>
@@ -208,7 +208,7 @@ export default function HomePage() {
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-brand-purple-light text-brand-purple-light hover:bg-brand-purple-light/10 px-8 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-brand-blue-light text-brand-blue-light hover:bg-brand-blue-light/10 px-8 py-4 text-lg">
                 <Link to="/products">
                   Explore Products
                 </Link>
@@ -228,7 +228,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-purple-light">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-blue-light">
               Our Services
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -245,7 +245,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-background/50 border-light-gray/20 hover:border-brand-purple-light/50 transition-all duration-300 h-full group">
+                <Card className="bg-background/50 border-light-gray/20 hover:border-brand-blue-light/50 transition-all duration-300 h-full group">
                   <CardContent className="p-10">
                     {service.serviceImage && (
                       <div className="mb-8 overflow-hidden rounded-lg">
@@ -321,8 +321,8 @@ export default function HomePage() {
                     )}
                     <div className="p-10">
                       <div className="flex items-center gap-2 mb-6">
-                        <Bot className="h-5 w-5 text-brand-purple-light" />
-                        <span className="text-sm font-paragraph text-brand-purple-light uppercase tracking-wider">
+                        <Bot className="h-5 w-5 text-brand-blue-light" />
+                        <span className="text-sm font-paragraph text-brand-blue-light uppercase tracking-wider">
                           {product.productType}
                         </span>
                       </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
                       <p className="text-light-gray font-paragraph mb-8 leading-relaxed">
                         {product.shortDescription}
                       </p>
-                      <Button asChild className="bg-brand-purple-accent text-background hover:bg-brand-purple-accent/90">
+                      <Button asChild className="bg-brand-blue-accent text-background hover:bg-brand-blue-accent/90">
                         <Link to="/products">
                           Explore <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -410,7 +410,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-purple-light">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-blue-light">
               Success Stories
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -427,7 +427,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-background border-light-gray/20 hover:border-brand-purple-light/50 transition-all duration-300 h-full">
+                <Card className="bg-background border-light-gray/20 hover:border-brand-blue-light/50 transition-all duration-300 h-full">
                   <CardContent className="p-10">
                     {study.mainImage && (
                       <div className="mb-8 overflow-hidden rounded-lg">
@@ -459,7 +459,7 @@ export default function HomePage() {
                         </span>
                       </div>
                     )}
-                    <Button asChild variant="outline" className="border-brand-purple-light text-brand-purple-light hover:bg-brand-purple-light/10">
+                    <Button asChild variant="outline" className="border-brand-blue-light text-brand-blue-light hover:bg-brand-blue-light/10">
                       <Link to="/case-studies">
                         Read More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -542,7 +542,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-brand-purple-light/20 to-brand-purple-accent/20">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-brand-blue/20 to-brand-blue-light/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -562,7 +562,7 @@ export default function HomePage() {
                   Start Your AI Journey <Zap className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-brand-purple-light text-brand-purple-light hover:bg-brand-purple-light/10 px-10 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-brand-blue-light text-brand-blue-light hover:bg-brand-blue-light/10 px-10 py-4 text-lg">
                 <Link to="/pricing">
                   View Pricing
                 </Link>
