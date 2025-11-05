@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Bot, Workflow, BarChart3, Users, Star } from 'lucide-react';
+import { ArrowRight, Zap, Bot, Workflow, BarChart3, Users, Star, Mail, Database, MessageSquare, Calendar, FileText, Globe, Settings, Cloud, Smartphone, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Image } from '@/components/ui/image';
@@ -294,174 +294,179 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Platform Logos Semi-Circle Animation */}
-          <div className="relative max-w-4xl mx-auto h-80 flex items-center justify-center">
-            {/* Semi-circle container */}
+          {/* Platform Logos Extended Semi-Circle Animation */}
+          <div className="relative max-w-6xl mx-auto h-[500px] flex items-center justify-center">
+            {/* Extended semi-circle container */}
             <div className="relative w-full h-full">
               
-              {/* ChatGPT - Left position */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="absolute left-8 top-1/2 transform -translate-y-1/2"
-                whileHover={{ scale: 1.1, y: -10 }}
-              >
-                <motion.div
-                  animate={{ 
-                    boxShadow: [
-                      "0 0 20px rgba(34, 197, 94, 0.2)",
-                      "0 0 30px rgba(34, 197, 94, 0.4)",
-                      "0 0 20px rgba(34, 197, 94, 0.2)"
-                    ]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
-                    <Bot className="h-10 w-10 text-white" />
-                  </div>
-                </motion.div>
-                <div className="text-center mt-4">
-                  <h3 className="text-lg font-heading font-semibold text-foreground">ChatGPT</h3>
-                  <p className="text-sm text-light-gray">AI Intelligence</p>
-                </div>
-              </motion.div>
+              {/* Define platform data for easier management */}
+              {(() => {
+                const platforms = [
+                  { name: 'ChatGPT', icon: Bot, color: 'from-green-400 to-green-600', glow: 'rgba(34, 197, 94, 0.3)', description: 'AI Intelligence', position: { x: 50, y: 250 } },
+                  { name: 'Zapier', icon: Workflow, color: 'from-orange-400 to-orange-600', glow: 'rgba(249, 115, 22, 0.3)', description: 'Automation Hub', position: { x: 150, y: 100 } },
+                  { name: 'Make.com', icon: Zap, color: 'from-purple-500 to-purple-700', glow: 'rgba(147, 51, 234, 0.3)', description: 'Visual Builder', position: { x: 300, y: 50 } },
+                  { name: 'N8n', icon: BarChart3, color: 'from-red-500 to-red-700', glow: 'rgba(239, 68, 68, 0.3)', description: 'Open Source', position: { x: 450, y: 50 } },
+                  { name: 'Gmail', icon: Mail, color: 'from-red-400 to-red-600', glow: 'rgba(239, 68, 68, 0.3)', description: 'Email Platform', position: { x: 600, y: 100 } },
+                  { name: 'Airtable', icon: Database, color: 'from-blue-400 to-blue-600', glow: 'rgba(59, 130, 246, 0.3)', description: 'Database', position: { x: 700, y: 250 } },
+                  { name: 'Slack', icon: MessageSquare, color: 'from-green-500 to-green-700', glow: 'rgba(34, 197, 94, 0.3)', description: 'Team Chat', position: { x: 600, y: 400 } },
+                  { name: 'Google Calendar', icon: Calendar, color: 'from-blue-500 to-blue-700', glow: 'rgba(59, 130, 246, 0.3)', description: 'Scheduling', position: { x: 450, y: 450 } },
+                  { name: 'Notion', icon: FileText, color: 'from-gray-600 to-gray-800', glow: 'rgba(107, 114, 128, 0.3)', description: 'Workspace', position: { x: 300, y: 450 } },
+                  { name: 'Webflow', icon: Globe, color: 'from-indigo-500 to-indigo-700', glow: 'rgba(99, 102, 241, 0.3)', description: 'Web Design', position: { x: 150, y: 400 } },
+                  { name: 'HubSpot', icon: Settings, color: 'from-orange-500 to-orange-700', glow: 'rgba(249, 115, 22, 0.3)', description: 'CRM Platform', position: { x: 100, y: 350 } },
+                  { name: 'AWS', icon: Cloud, color: 'from-yellow-500 to-yellow-700', glow: 'rgba(245, 158, 11, 0.3)', description: 'Cloud Services', position: { x: 650, y: 350 } },
+                  { name: 'Twilio', icon: Smartphone, color: 'from-pink-500 to-pink-700', glow: 'rgba(236, 72, 153, 0.3)', description: 'Communications', position: { x: 375, y: 150 } },
+                  { name: 'GitHub', icon: Code, color: 'from-gray-700 to-gray-900', glow: 'rgba(75, 85, 99, 0.3)', description: 'Code Repository', position: { x: 375, y: 350 } }
+                ];
 
-              {/* Zapier - Top center position */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="absolute left-1/2 top-8 transform -translate-x-1/2"
-                whileHover={{ scale: 1.1, y: -10 }}
-              >
-                <motion.div
-                  animate={{ 
-                    boxShadow: [
-                      "0 0 20px rgba(249, 115, 22, 0.2)",
-                      "0 0 30px rgba(249, 115, 22, 0.4)",
-                      "0 0 20px rgba(249, 115, 22, 0.2)"
-                    ]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                    <Workflow className="h-10 w-10 text-white" />
-                  </div>
-                </motion.div>
-                <div className="text-center mt-4">
-                  <h3 className="text-lg font-heading font-semibold text-foreground">Zapier</h3>
-                  <p className="text-sm text-light-gray">Automation Hub</p>
-                </div>
-              </motion.div>
+                return platforms.map((platform, index) => (
+                  <motion.div
+                    key={platform.name}
+                    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="absolute"
+                    style={{
+                      left: `${platform.position.x}px`,
+                      top: `${platform.position.y}px`,
+                      transform: 'translate(-50%, -50%)'
+                    }}
+                    whileHover={{ scale: 1.1, y: -10 }}
+                  >
+                    <motion.div
+                      animate={{ 
+                        boxShadow: [
+                          `0 0 20px ${platform.glow}`,
+                          `0 0 30px ${platform.glow.replace('0.3', '0.6')}`,
+                          `0 0 20px ${platform.glow}`
+                        ]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: index * 0.3 }}
+                      className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <div className={`w-14 h-14 bg-gradient-to-br ${platform.color} rounded-xl flex items-center justify-center`}>
+                        <platform.icon className="h-8 w-8 text-white" />
+                      </div>
+                    </motion.div>
+                    <div className="text-center mt-3">
+                      <h3 className="text-sm font-heading font-semibold text-foreground">{platform.name}</h3>
+                      <p className="text-xs text-light-gray">{platform.description}</p>
+                    </div>
+                  </motion.div>
+                ));
+              })()}
 
-              {/* Make.com - Right position */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="absolute right-8 top-1/2 transform -translate-y-1/2"
-                whileHover={{ scale: 1.1, y: -10 }}
-              >
-                <motion.div
-                  animate={{ 
-                    boxShadow: [
-                      "0 0 20px rgba(147, 51, 234, 0.2)",
-                      "0 0 30px rgba(147, 51, 234, 0.4)",
-                      "0 0 20px rgba(147, 51, 234, 0.2)"
-                    ]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
-                    <Zap className="h-10 w-10 text-white" />
-                  </div>
-                </motion.div>
-                <div className="text-center mt-4">
-                  <h3 className="text-lg font-heading font-semibold text-foreground">Make.com</h3>
-                  <p className="text-sm text-light-gray">Visual Builder</p>
-                </div>
-              </motion.div>
-
-              {/* N8n - Bottom center position */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                viewport={{ once: true }}
-                className="absolute left-1/2 bottom-8 transform -translate-x-1/2"
-                whileHover={{ scale: 1.1, y: -10 }}
-              >
-                <motion.div
-                  animate={{ 
-                    boxShadow: [
-                      "0 0 20px rgba(239, 68, 68, 0.2)",
-                      "0 0 30px rgba(239, 68, 68, 0.4)",
-                      "0 0 20px rgba(239, 68, 68, 0.2)"
-                    ]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, delay: 3 }}
-                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="h-10 w-10 text-white" />
-                  </div>
-                </motion.div>
-                <div className="text-center mt-4">
-                  <h3 className="text-lg font-heading font-semibold text-foreground">N8n</h3>
-                  <p className="text-sm text-light-gray">Open Source</p>
-                </div>
-              </motion.div>
-
-              {/* Connecting Arc Animation */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 320">
+              {/* Enhanced Connecting Network Animation */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 750 500">
                 <defs>
-                  <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
+                  <linearGradient id="networkGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.4" />
                     <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.6" />
-                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.4" />
+                  </linearGradient>
+                  <linearGradient id="networkGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#EF4444" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.4" />
                   </linearGradient>
                 </defs>
                 
+                {/* Main outer arc */}
                 <motion.path
-                  d="M 50 160 Q 200 50 350 160 Q 200 270 50 160"
-                  stroke="url(#arcGradient)"
+                  d="M 50 250 Q 375 -50 700 250 Q 375 550 50 250"
+                  stroke="url(#networkGradient1)"
                   strokeWidth="2"
                   fill="none"
                   strokeDasharray="8,4"
                   initial={{ pathLength: 0, opacity: 0 }}
                   whileInView={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 3, delay: 1.2, ease: "easeInOut" }}
+                  transition={{ duration: 4, delay: 1.5, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                />
+                
+                {/* Inner connecting arcs */}
+                <motion.path
+                  d="M 150 100 Q 375 200 600 100"
+                  stroke="url(#networkGradient2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeDasharray="6,3"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 3, delay: 2.5, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                />
+                
+                <motion.path
+                  d="M 150 400 Q 375 300 600 400"
+                  stroke="url(#networkGradient2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeDasharray="6,3"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 3, delay: 3, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                />
+                
+                {/* Cross connections */}
+                <motion.path
+                  d="M 300 50 Q 375 250 450 450"
+                  stroke="url(#networkGradient1)"
+                  strokeWidth="1"
+                  fill="none"
+                  strokeDasharray="4,2"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 2.5, delay: 3.5, ease: "easeInOut" }}
                   viewport={{ once: true }}
                 />
               </svg>
 
-              {/* Floating Connection Particles */}
+              {/* Enhanced Floating Connection Particles */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(6)].map((_, i) => (
+                {[...Array(12)].map((_, i) => (
                   <motion.div
                     key={i}
                     className="absolute w-2 h-2 bg-brand-blue-light rounded-full opacity-60"
                     initial={{
-                      x: 200 + Math.cos((i * Math.PI) / 3) * 120,
-                      y: 160 + Math.sin((i * Math.PI) / 3) * 80,
+                      x: 375 + Math.cos((i * Math.PI) / 6) * 200,
+                      y: 250 + Math.sin((i * Math.PI) / 6) * 150,
                       scale: 0
                     }}
                     animate={{
-                      x: 200 + Math.cos((i * Math.PI) / 3 + Math.PI / 6) * 120,
-                      y: 160 + Math.sin((i * Math.PI) / 3 + Math.PI / 6) * 80,
+                      x: 375 + Math.cos((i * Math.PI) / 6 + Math.PI / 12) * 200,
+                      y: 250 + Math.sin((i * Math.PI) / 6 + Math.PI / 12) * 150,
+                      scale: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      delay: i * 0.4,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+                
+                {/* Additional inner orbit particles */}
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={`inner-${i}`}
+                    className="absolute w-1.5 h-1.5 bg-brand-purple-light rounded-full opacity-40"
+                    initial={{
+                      x: 375 + Math.cos((i * Math.PI) / 4) * 120,
+                      y: 250 + Math.sin((i * Math.PI) / 4) * 80,
+                      scale: 0
+                    }}
+                    animate={{
+                      x: 375 + Math.cos((i * Math.PI) / 4 - Math.PI / 8) * 120,
+                      y: 250 + Math.sin((i * Math.PI) / 4 - Math.PI / 8) * 80,
                       scale: [0, 1, 0]
                     }}
                     transition={{
                       duration: 6,
                       repeat: Infinity,
-                      delay: i * 0.5,
+                      delay: i * 0.3,
                       ease: "easeInOut"
                     }}
                   />
