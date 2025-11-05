@@ -473,7 +473,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 overflow-hidden">
+      <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -490,121 +490,160 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Animated Scrolling Carousel */}
+          {/* Enhanced Scrollable Carousel */}
           <div className="relative">
-            <motion.div
-              className="flex gap-8"
-              animate={{
-                x: [0, -100 * testimonials.length]
+            {/* Scrollable Container */}
+            <div 
+              className="overflow-x-auto overflow-y-hidden scrollbar-hide pb-4"
+              style={{
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
               }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: testimonials.length * 8,
-                  ease: "linear"
+              onMouseEnter={(e) => {
+                // Pause auto-scroll on hover
+                const motionDiv = e.currentTarget.querySelector('[data-auto-scroll]') as HTMLElement;
+                if (motionDiv) {
+                  motionDiv.style.animationPlayState = 'paused';
                 }
               }}
-              whileHover={{ animationPlayState: "paused" }}
+              onMouseLeave={(e) => {
+                // Resume auto-scroll when not hovering
+                const motionDiv = e.currentTarget.querySelector('[data-auto-scroll]') as HTMLElement;
+                if (motionDiv) {
+                  motionDiv.style.animationPlayState = 'running';
+                }
+              }}
             >
-              {/* First set of testimonials */}
-              {testimonials.map((testimonial) => (
-                <motion.div
-                  key={`first-${testimonial._id}`}
-                  className="flex-shrink-0 w-96"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300">
-                    <CardContent className="p-8">
-                      <div className="flex items-center gap-1 mb-6">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-5 w-5 ${
-                              i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
-                        "{testimonial.testimonialText}"
-                      </p>
-                      <div className="flex items-center gap-4">
-                        {testimonial.clientPhoto && (
-                          <Image
-                            src={testimonial.clientPhoto}
-                            alt={testimonial.clientName || 'Client'}
-                            width={48}
-                            height={48}
-                            className="w-12 h-12 rounded-full object-cover"
-                          />
-                        )}
-                        <div>
-                          <h4 className="font-heading font-semibold text-foreground text-sm">
-                            {testimonial.clientName}
-                          </h4>
-                          <p className="text-xs text-light-gray font-paragraph">
-                            {testimonial.clientTitleCompany}
-                          </p>
+              <motion.div
+                data-auto-scroll
+                className="flex gap-8 min-w-max"
+                animate={{
+                  x: [0, -100 * testimonials.length]
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: testimonials.length * 8,
+                    ease: "linear"
+                  }
+                }}
+                style={{
+                  width: `${(testimonials.length * 2) * 400}px` // Ensure enough width for seamless scroll
+                }}
+              >
+                {/* First set of testimonials */}
+                {testimonials.map((testimonial) => (
+                  <motion.div
+                    key={`first-${testimonial._id}`}
+                    className="flex-shrink-0 w-96"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300 cursor-grab active:cursor-grabbing">
+                      <CardContent className="p-8">
+                        <div className="flex items-center gap-1 mb-6">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`h-5 w-5 ${
+                                i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
+                              }`}
+                            />
+                          ))}
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-              
-              {/* Duplicate set for seamless loop */}
-              {testimonials.map((testimonial) => (
-                <motion.div
-                  key={`second-${testimonial._id}`}
-                  className="flex-shrink-0 w-96"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300">
-                    <CardContent className="p-8">
-                      <div className="flex items-center gap-1 mb-6">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-5 w-5 ${
-                              i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
-                        "{testimonial.testimonialText}"
-                      </p>
-                      <div className="flex items-center gap-4">
-                        {testimonial.clientPhoto && (
-                          <Image
-                            src={testimonial.clientPhoto}
-                            alt={testimonial.clientName || 'Client'}
-                            width={48}
-                            height={48}
-                            className="w-12 h-12 rounded-full object-cover"
-                          />
-                        )}
-                        <div>
-                          <h4 className="font-heading font-semibold text-foreground text-sm">
-                            {testimonial.clientName}
-                          </h4>
-                          <p className="text-xs text-light-gray font-paragraph">
-                            {testimonial.clientTitleCompany}
-                          </p>
+                        <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
+                          "{testimonial.testimonialText}"
+                        </p>
+                        <div className="flex items-center gap-4">
+                          {testimonial.clientPhoto && (
+                            <Image
+                              src={testimonial.clientPhoto}
+                              alt={testimonial.clientName || 'Client'}
+                              width={48}
+                              height={48}
+                              className="w-12 h-12 rounded-full object-cover"
+                            />
+                          )}
+                          <div>
+                            <h4 className="font-heading font-semibold text-foreground text-sm">
+                              {testimonial.clientName}
+                            </h4>
+                            <p className="text-xs text-light-gray font-paragraph">
+                              {testimonial.clientTitleCompany}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+                
+                {/* Duplicate set for seamless loop */}
+                {testimonials.map((testimonial) => (
+                  <motion.div
+                    key={`second-${testimonial._id}`}
+                    className="flex-shrink-0 w-96"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300 cursor-grab active:cursor-grabbing">
+                      <CardContent className="p-8">
+                        <div className="flex items-center gap-1 mb-6">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`h-5 w-5 ${
+                                i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
+                          "{testimonial.testimonialText}"
+                        </p>
+                        <div className="flex items-center gap-4">
+                          {testimonial.clientPhoto && (
+                            <Image
+                              src={testimonial.clientPhoto}
+                              alt={testimonial.clientName || 'Client'}
+                              width={48}
+                              height={48}
+                              className="w-12 h-12 rounded-full object-cover"
+                            />
+                          )}
+                          <div>
+                            <h4 className="font-heading font-semibold text-foreground text-sm">
+                              {testimonial.clientName}
+                            </h4>
+                            <p className="text-xs text-light-gray font-paragraph">
+                              {testimonial.clientTitleCompany}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
             
             {/* Gradient overlays for smooth edge effect */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+            
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mt-6">
+              <div className="flex items-center gap-2 text-light-gray/60 text-sm font-paragraph">
+                <span>Scroll horizontally or use trackpad</span>
+                <div className="flex gap-1">
+                  <div className="w-1 h-1 bg-brand-purple-accent rounded-full animate-pulse"></div>
+                  <div className="w-1 h-1 bg-brand-purple-accent rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1 h-1 bg-brand-purple-accent rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
