@@ -185,7 +185,7 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.8 }}
               className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-brand-blue to-brand-blue-light bg-clip-text text-transparent"
             >
-              AI-Powered Solutions
+              Intelligent Automation for a Smarter Tomorrow
             </motion.h1>
             
             <motion.p
