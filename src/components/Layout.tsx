@@ -66,7 +66,12 @@ export default function Layout() {
             {/* Logo - Left Column */}
             <div className="flex justify-start">
               <Link to="/" className="flex items-center space-x-3">
-
+                <Image 
+                  src="https://static.wixstatic.com/media/1ba855_57ae7335fcad42e1ad92a38427a3f78b~mv2.png" 
+                  alt="Zapshere Logo" 
+                  width={36}
+                  className="h-9 w-9"
+                />
                 <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
                   Zapshere
                 </span>
@@ -191,7 +196,7 @@ export default function Layout() {
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center space-x-3 mb-6">
                 <Image 
-                  src="https://static.wixstatic.com/media/1ba855_264dd372724d4f4d8b648bbf90e187c9~mv2.png" 
+                  src="https://static.wixstatic.com/media/1ba855_57ae7335fcad42e1ad92a38427a3f78b~mv2.png" 
                   alt="Zapshere Logo" 
                   width={36}
                   className="h-9 w-9"
