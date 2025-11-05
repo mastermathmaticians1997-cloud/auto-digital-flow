@@ -217,7 +217,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Services Overview */}
       <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
@@ -276,7 +275,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Products Showcase */}
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-background/50">
         <div className="max-w-[120rem] mx-auto">
@@ -345,7 +343,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Industries */}
       <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
@@ -399,7 +396,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Case Studies */}
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-background/50">
         <div className="max-w-[120rem] mx-auto">
@@ -471,7 +467,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Testimonials */}
       <section className="py-32 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[120rem] mx-auto">
@@ -636,7 +631,7 @@ export default function HomePage() {
             {/* Scroll Indicator */}
             <div className="flex justify-center mt-6">
               <div className="flex items-center gap-2 text-light-gray/60 text-sm font-paragraph">
-                <span>Scroll horizontally or use trackpad</span>
+
                 <div className="flex gap-1">
                   <div className="w-1 h-1 bg-brand-purple-accent rounded-full animate-pulse"></div>
                   <div className="w-1 h-1 bg-brand-purple-accent rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
@@ -647,7 +642,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-brand-blue/20 to-brand-blue-light/20">
         <div className="max-w-4xl mx-auto text-center">
