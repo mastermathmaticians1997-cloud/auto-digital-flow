@@ -183,7 +183,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-brand-blue to-brand-blue-light bg-clip-text text-transparent"
+              className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-brand-blue to-brand-blue-light bg-clip-text text-transparent md:text-6xl"
             >
               Intelligent Automation for a Smarter Tomorrow
             </motion.h1>
