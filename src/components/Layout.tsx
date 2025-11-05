@@ -64,8 +64,8 @@ export default function Layout() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <Bot className="h-9 w-9 text-light-purple" />
-              <span className="text-2xl font-heading font-bold bg-gradient-to-r from-light-purple to-purple-accent bg-clip-text text-transparent">
+              <Bot className="h-9 w-9 text-brand-purple-light" />
+              <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-purple-accent bg-clip-text text-transparent">
                 Zapshere
               </span>
             </Link>
@@ -78,8 +78,8 @@ export default function Layout() {
                   to={item.href}
                   className={`font-paragraph transition-colors duration-200 hover:scale-105 transform py-2 px-1 ${
                     location.pathname === item.href
-                      ? 'text-light-purple'
-                      : 'text-light-gray hover:text-light-purple'
+                      ? 'text-brand-purple-light'
+                      : 'text-light-gray hover:text-brand-purple-light'
                   }`}
                 >
                   {item.name}
@@ -90,8 +90,8 @@ export default function Layout() {
               <DropdownMenu>
                 <DropdownMenuTrigger className={`font-paragraph transition-colors duration-200 hover:scale-105 transform flex items-center space-x-1 py-2 px-1 ${
                   location.pathname === '/industries' || location.pathname === '/case-studies'
-                    ? 'text-light-purple'
-                    : 'text-light-gray hover:text-light-purple'
+                    ? 'text-brand-purple-light'
+                    : 'text-light-gray hover:text-brand-purple-light'
                 }`}>
                   <span>Solutions</span>
                   <ChevronDown className="h-4 w-4" />
@@ -103,8 +103,8 @@ export default function Layout() {
                         to={item.href}
                         className={`font-paragraph transition-colors duration-200 w-full ${
                           location.pathname === item.href
-                            ? 'text-light-purple'
-                            : 'text-light-gray hover:text-light-purple'
+                            ? 'text-brand-purple-light'
+                            : 'text-light-gray hover:text-brand-purple-light'
                         }`}
                       >
                         {item.name}
@@ -135,8 +135,8 @@ export default function Layout() {
                       onClick={() => setIsOpen(false)}
                       className={`font-paragraph text-lg transition-colors duration-200 py-2 ${
                         location.pathname === item.href
-                          ? 'text-light-purple'
-                          : 'text-light-gray hover:text-light-purple'
+                          ? 'text-brand-purple-light'
+                          : 'text-light-gray hover:text-brand-purple-light'
                       }`}
                     >
                       {item.name}
@@ -153,8 +153,8 @@ export default function Layout() {
                         onClick={() => setIsOpen(false)}
                         className={`block font-paragraph text-lg transition-colors duration-200 mb-4 py-2 ${
                           location.pathname === item.href
-                            ? 'text-light-purple'
-                            : 'text-light-gray hover:text-light-purple'
+                            ? 'text-brand-purple-light'
+                            : 'text-light-gray hover:text-brand-purple-light'
                         }`}
                       >
                         {item.name}
@@ -186,8 +186,8 @@ export default function Layout() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center space-x-3 mb-6">
-                <Bot className="h-9 w-9 text-light-purple" />
-                <span className="text-2xl font-heading font-bold bg-gradient-to-r from-light-purple to-purple-accent bg-clip-text text-transparent">
+                <Bot className="h-9 w-9 text-brand-purple-light" />
+                <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-purple-accent bg-clip-text text-transparent">
                   Zapshere
                 </span>
               </Link>
@@ -195,16 +195,16 @@ export default function Layout() {
                 Transforming businesses with cutting-edge AI automation, intelligent workflows, and data-driven digital marketing strategies.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="text-light-gray hover:text-light-purple transition-colors p-2">
+                <a href="#" className="text-light-gray hover:text-brand-purple-light transition-colors p-2">
                   <Facebook className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-light-gray hover:text-light-purple transition-colors p-2">
+                <a href="#" className="text-light-gray hover:text-brand-purple-light transition-colors p-2">
                   <Twitter className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-light-gray hover:text-light-purple transition-colors p-2">
+                <a href="#" className="text-light-gray hover:text-brand-purple-light transition-colors p-2">
                   <Linkedin className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-light-gray hover:text-light-purple transition-colors p-2">
+                <a href="#" className="text-light-gray hover:text-brand-purple-light transition-colors p-2">
                   <Instagram className="h-6 w-6" />
                 </a>
               </div>
@@ -218,7 +218,7 @@ export default function Layout() {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-light-gray hover:text-light-purple transition-colors font-paragraph py-1 block"
+                      className="text-light-gray hover:text-brand-purple-light transition-colors font-paragraph py-1 block"
                     >
                       {link.name}
                     </Link>
@@ -235,7 +235,7 @@ export default function Layout() {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-light-gray hover:text-light-purple transition-colors font-paragraph py-1 block"
+                      className="text-light-gray hover:text-brand-purple-light transition-colors font-paragraph py-1 block"
                     >
                       {link.name}
                     </Link>
@@ -252,7 +252,7 @@ export default function Layout() {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-light-gray hover:text-light-purple transition-colors font-paragraph py-1 block"
+                      className="text-light-gray hover:text-brand-purple-light transition-colors font-paragraph py-1 block"
                     >
                       {link.name}
                     </Link>
@@ -266,18 +266,18 @@ export default function Layout() {
               <h3 className="text-foreground font-heading font-semibold mb-6">Contact</h3>
               <div className="space-y-5">
                 <div className="flex items-start space-x-3">
-                  <Mail className="h-5 w-5 text-light-purple mt-1" />
+                  <Mail className="h-5 w-5 text-brand-purple-light mt-1" />
                   <div className="flex flex-col space-y-1">
                     <span className="text-light-gray font-paragraph">hello@zapshere.com</span>
                     <span className="text-light-gray font-paragraph">support@zapshere.com</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-light-purple" />
+                  <Phone className="h-5 w-5 text-brand-purple-light" />
                   <span className="text-light-gray font-paragraph">+1 (555) 123-4567</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-light-purple" />
+                  <MapPin className="h-5 w-5 text-brand-purple-light" />
                   <span className="text-light-gray font-paragraph">San Francisco, CA</span>
                 </div>
               </div>
@@ -290,10 +290,10 @@ export default function Layout() {
               © 2024 Zapshere. All rights reserved.
             </p>
             <div className="flex space-x-8 mt-6 md:mt-0">
-              <Link to="/privacy" className="text-light-gray hover:text-light-purple transition-colors font-paragraph text-sm py-2">
+              <Link to="/privacy" className="text-light-gray hover:text-brand-purple-light transition-colors font-paragraph text-sm py-2">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-light-gray hover:text-light-purple transition-colors font-paragraph text-sm py-2">
+              <Link to="/terms" className="text-light-gray hover:text-brand-purple-light transition-colors font-paragraph text-sm py-2">
                 Terms of Service
               </Link>
             </div>
@@ -310,7 +310,7 @@ export default function Layout() {
       >
         <Button
           size="icon"
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-electric-blue to-neon-green hover:from-electric-blue/90 hover:to-neon-green/90 shadow-lg"
+          className="h-14 w-14 rounded-full bg-gradient-to-r from-brand-purple to-brand-purple-accent hover:from-brand-purple/90 hover:to-brand-purple-accent/90 shadow-lg"
         >
           <Bot className="h-6 w-6 text-background" />
         </Button>

@@ -23,19 +23,19 @@ export default {
                 paragraph: "open sans"
             },
             colors: {
-                'deep-purple': '#6B46C1',
-                'light-purple': '#A855F7',
-                'purple-accent': '#C084FC',
-                'purple-light': '#E9D5FF',
+                'brand-purple': '#8B5CF6',
+                'brand-purple-light': '#A855F7',
+                'brand-purple-accent': '#C084FC',
+                'brand-purple-dark': '#7C3AED',
                 'light-gray': '#E0E0E0',
                 destructive: '#FF4136',
                 'destructive-foreground': '#FFFFFF',
-                background: '#1A0B2E',
-                secondary: '#7C3AED',
+                background: '#0F0A1A',
+                secondary: '#8B5CF6',
                 foreground: '#FFFFFF',
                 'secondary-foreground': '#FFFFFF',
                 'primary-foreground': '#FFFFFF',
-                primary: '#6B46C1'
+                primary: '#8B5CF6'
             },
         },
     },
