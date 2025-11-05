@@ -40,7 +40,7 @@ const useAnimatedDataStream = () => {
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
         size: Math.random() * 3 + 1,
-        color: Math.random() > 0.5 ? '#7DF9FF' : '#39FF14',
+        color: Math.random() > 0.5 ? '#A855F7' : '#C084FC',
         opacity: Math.random() * 0.8 + 0.2,
       });
     }
@@ -56,7 +56,7 @@ const useAnimatedDataStream = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(18, 18, 18, 0.1)';
+      ctx.fillStyle = 'rgba(26, 11, 46, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle, index) => {
@@ -183,7 +183,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-electric-blue via-primary to-neon-green bg-clip-text text-transparent"
+              className="text-6xl md:text-8xl font-heading font-bold mb-6 bg-gradient-to-r from-light-purple via-primary to-purple-accent bg-clip-text text-transparent"
             >
               AI-Powered Solutions
             </motion.h1>
@@ -208,7 +208,7 @@ export default function HomePage() {
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-8 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-light-purple text-light-purple hover:bg-light-purple/10 px-8 py-4 text-lg">
                 <Link to="/products">
                   Explore Products
                 </Link>
@@ -228,7 +228,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-electric-blue">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-light-purple">
               Our Services
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -245,7 +245,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-background/50 border-light-gray/20 hover:border-electric-blue/50 transition-all duration-300 h-full group">
+                <Card className="bg-background/50 border-light-gray/20 hover:border-light-purple/50 transition-all duration-300 h-full group">
                   <CardContent className="p-10">
                     {service.serviceImage && (
                       <div className="mb-8 overflow-hidden rounded-lg">
@@ -287,7 +287,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neon-green">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-purple-accent">
               AI Products & Tools
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -305,7 +305,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
               >
-                <Card className="bg-background border-light-gray/20 hover:border-neon-green/50 transition-all duration-300 h-full group overflow-hidden">
+                <Card className="bg-background border-light-gray/20 hover:border-purple-accent/50 transition-all duration-300 h-full group overflow-hidden">
                   <CardContent className="p-0">
                     {product.gridImage && (
                       <div className="relative overflow-hidden">
@@ -321,8 +321,8 @@ export default function HomePage() {
                     )}
                     <div className="p-10">
                       <div className="flex items-center gap-2 mb-6">
-                        <Bot className="h-5 w-5 text-electric-blue" />
-                        <span className="text-sm font-paragraph text-electric-blue uppercase tracking-wider">
+                        <Bot className="h-5 w-5 text-light-purple" />
+                        <span className="text-sm font-paragraph text-light-purple uppercase tracking-wider">
                           {product.productType}
                         </span>
                       </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
                       <p className="text-light-gray font-paragraph mb-8 leading-relaxed">
                         {product.shortDescription}
                       </p>
-                      <Button asChild className="bg-neon-green text-background hover:bg-neon-green/90">
+                      <Button asChild className="bg-purple-accent text-background hover:bg-purple-accent/90">
                         <Link to="/products">
                           Explore <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -410,7 +410,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-electric-blue">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-light-purple">
               Success Stories
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -427,7 +427,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-background border-light-gray/20 hover:border-electric-blue/50 transition-all duration-300 h-full">
+                <Card className="bg-background border-light-gray/20 hover:border-light-purple/50 transition-all duration-300 h-full">
                   <CardContent className="p-10">
                     {study.mainImage && (
                       <div className="mb-8 overflow-hidden rounded-lg">
@@ -441,8 +441,8 @@ export default function HomePage() {
                       </div>
                     )}
                     <div className="flex items-center gap-2 mb-6">
-                      <BarChart3 className="h-5 w-5 text-neon-green" />
-                      <span className="text-sm font-paragraph text-neon-green uppercase tracking-wider">
+                      <BarChart3 className="h-5 w-5 text-purple-accent" />
+                      <span className="text-sm font-paragraph text-purple-accent uppercase tracking-wider">
                         {study.industry}
                       </span>
                     </div>
@@ -454,12 +454,12 @@ export default function HomePage() {
                     </p>
                     {study.roiPercentage && (
                       <div className="flex items-center gap-2 mb-8">
-                        <span className="text-2xl font-heading font-bold text-neon-green">
+                        <span className="text-2xl font-heading font-bold text-purple-accent">
                           {study.roiPercentage}% ROI
                         </span>
                       </div>
                     )}
-                    <Button asChild variant="outline" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10">
+                    <Button asChild variant="outline" className="border-light-purple text-light-purple hover:bg-light-purple/10">
                       <Link to="/case-studies">
                         Read More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -482,7 +482,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neon-green">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-purple-accent">
               What Our Clients Say
             </h2>
             <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
@@ -506,7 +506,7 @@ export default function HomePage() {
                         <Star
                           key={i}
                           className={`h-5 w-5 ${
-                            i < (testimonial.rating || 5) ? 'text-neon-green fill-current' : 'text-light-gray/30'
+                            i < (testimonial.rating || 5) ? 'text-purple-accent fill-current' : 'text-light-gray/30'
                           }`}
                         />
                       ))}
@@ -542,7 +542,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-electric-blue/20 to-neon-green/20">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-primary/20 via-light-purple/20 to-purple-accent/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -562,7 +562,7 @@ export default function HomePage() {
                   Start Your AI Journey <Zap className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-electric-blue text-electric-blue hover:bg-electric-blue/10 px-10 py-4 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-light-purple text-light-purple hover:bg-light-purple/10 px-10 py-4 text-lg">
                 <Link to="/pricing">
                   View Pricing
                 </Link>
