@@ -153,7 +153,7 @@ export default function HomePage() {
         setProducts(productsData.items.slice(0, 6));
         setIndustries(industriesData.items.slice(0, 6));
         setCaseStudies(caseStudiesData.items.slice(0, 3));
-        setTestimonials(testimonialsData.items.slice(0, 3));
+        setTestimonials(testimonialsData.items); // Show all testimonials
       } catch (error) {
         console.error('Error fetching data:', error);
       }
