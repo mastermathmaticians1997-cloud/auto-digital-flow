@@ -314,20 +314,7 @@ export default function Layout() {
           </div>
         </div>
       </footer>
-      {/* Floating Chatbot Demo */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-50"
-      >
-        <Button
-          size="icon"
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-brand-purple to-brand-blue-light hover:from-brand-purple/90 hover:to-brand-blue-light/90 shadow-lg"
-        >
-          <Bot className="h-6 w-6 text-background" />
-        </Button>
-      </motion.div>
+
     </div>
   );
 }
