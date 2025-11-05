@@ -198,7 +198,7 @@ export default function Layout() {
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center space-x-3 mb-6">
                 <Image 
-                  src="https://static.wixstatic.com/media/1ba855_db0e81715f224cb7aa1ab5e633e07d68~mv2.png" 
+                  src="https://static.wixstatic.com/media/1ba855_264dd372724d4f4d8b648bbf90e187c9~mv2.png" 
                   alt="Zapshere Logo" 
                   width={36}
                   className="h-9 w-9"
@@ -303,7 +303,7 @@ export default function Layout() {
           {/* Bottom Bar */}
           <div className="border-t border-light-gray/20 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center">
             <p className="text-light-gray font-paragraph text-sm">
-              © 2024 Zapshere. All rights reserved.
+              © 2025 Zapshere. All rights reserved.
             </p>
             <div className="flex space-x-8 mt-6 md:mt-0">
               <Link to="/privacy" className="text-light-gray hover:text-brand-blue-light transition-colors font-paragraph text-sm py-2">
