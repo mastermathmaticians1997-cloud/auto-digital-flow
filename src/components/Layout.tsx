@@ -69,8 +69,8 @@ export default function Layout() {
                 <Image 
                   src="https://static.wixstatic.com/media/1ba855_57ae7335fcad42e1ad92a38427a3f78b~mv2.png" 
                   alt="Zapshere Logo" 
-                  width={36}
-                  className="h-9 w-9"
+                  width={48}
+                  className="h-12 w-12"
                 />
                 <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
                   Zapshere
@@ -198,8 +198,8 @@ export default function Layout() {
                 <Image 
                   src="https://static.wixstatic.com/media/1ba855_57ae7335fcad42e1ad92a38427a3f78b~mv2.png" 
                   alt="Zapshere Logo" 
-                  width={36}
-                  className="h-9 w-9"
+                  width={48}
+                  className="h-12 w-12"
                 />
                 <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
                   Zapshere
