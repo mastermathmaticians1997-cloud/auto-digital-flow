@@ -289,231 +289,366 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-purple-light">
               Integrate Everything
             </h2>
-            <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
-              Seamlessly connect with your favorite platforms and tools for a unified automation experience
+            <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto mb-8">
+              Watch how data flows seamlessly between platforms in a real automation workflow
             </p>
+            <div className="text-sm font-paragraph text-brand-blue-light bg-brand-blue/10 px-4 py-2 rounded-full inline-block">
+              Live Workflow Demo: Customer Support Automation
+            </div>
           </motion.div>
 
-          {/* Platform Integration Animation */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Central Hub */}
+          {/* Workflow Animation */}
+          <div className="relative max-w-7xl mx-auto h-[600px]">
+            {/* ChatGPT - Top Left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+              className="absolute top-16 left-16"
             >
-              <div className="w-32 h-32 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full flex items-center justify-center shadow-2xl">
-                <Workflow className="h-16 w-16 text-white" />
+              <div className="relative">
+                <motion.div
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 20px rgba(34, 197, 94, 0.3)",
+                      "0 0 40px rgba(34, 197, 94, 0.6)",
+                      "0 0 20px rgba(34, 197, 94, 0.3)"
+                    ]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 0 }}
+                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                    <Bot className="h-10 w-10 text-white" />
+                  </div>
+                </motion.div>
+                <div className="text-center mt-3">
+                  <h3 className="text-sm font-heading font-semibold text-foreground">ChatGPT</h3>
+                  <p className="text-xs text-light-gray">AI Analysis</p>
+                </div>
+                
+                {/* Step 1 Indicator */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 2 }}
+                  className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                >
+                  1
+                </motion.div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full animate-pulse opacity-30"></div>
             </motion.div>
 
-            {/* Platform Logos in Circular Formation */}
-            <div className="relative w-full h-96 flex items-center justify-center">
-              {/* ChatGPT */}
-              <motion.div
-                initial={{ opacity: 0, x: -100, y: -100 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 1, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="absolute top-8 left-8"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
-                    <Bot className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <p className="text-center text-sm font-paragraph text-light-gray mt-2">ChatGPT</p>
-                {/* Connection Line */}
+            {/* Zapier - Top Right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="absolute top-16 right-16"
+            >
+              <div className="relative">
                 <motion.div
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.2 }}
-                  viewport={{ once: true }}
-                  className="absolute top-10 left-10"
-                >
-                  <svg className="absolute w-40 h-40" viewBox="0 0 160 160">
-                    <motion.path
-                      d="M 40 40 Q 80 20 120 80"
-                      stroke="url(#gradient1)"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="5,5"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 2, delay: 1.5 }}
-                    />
-                    <defs>
-                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#8B5CF6" />
-                        <stop offset="100%" stopColor="#3B82F6" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>
-              </motion.div>
-
-              {/* Make.com */}
-              <motion.div
-                initial={{ opacity: 0, x: 100, y: -100 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                viewport={{ once: true }}
-                className="absolute top-8 right-8"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center">
-                    <Zap className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <p className="text-center text-sm font-paragraph text-light-gray mt-2">Make.com</p>
-                {/* Connection Line */}
-                <motion.div
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.4 }}
-                  viewport={{ once: true }}
-                  className="absolute top-10 right-10"
-                >
-                  <svg className="absolute w-40 h-40 -left-32" viewBox="0 0 160 160">
-                    <motion.path
-                      d="M 120 40 Q 80 20 40 80"
-                      stroke="url(#gradient2)"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="5,5"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 2, delay: 1.7 }}
-                    />
-                    <defs>
-                      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#A855F7" />
-                        <stop offset="100%" stopColor="#8B5CF6" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>
-              </motion.div>
-
-              {/* Zapier */}
-              <motion.div
-                initial={{ opacity: 0, x: -100, y: 100 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 1, delay: 1.0 }}
-                viewport={{ once: true }}
-                className="absolute bottom-8 left-8"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
-                    <Workflow className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <p className="text-center text-sm font-paragraph text-light-gray mt-2">Zapier</p>
-                {/* Connection Line */}
-                <motion.div
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.6 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-10 left-10"
-                >
-                  <svg className="absolute w-40 h-40 -top-32" viewBox="0 0 160 160">
-                    <motion.path
-                      d="M 40 120 Q 80 140 120 80"
-                      stroke="url(#gradient3)"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="5,5"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 2, delay: 1.9 }}
-                    />
-                    <defs>
-                      <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#3B82F6" />
-                        <stop offset="100%" stopColor="#60A5FA" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>
-              </motion.div>
-
-              {/* N8n */}
-              <motion.div
-                initial={{ opacity: 0, x: 100, y: 100 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                viewport={{ once: true }}
-                className="absolute bottom-8 right-8"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center">
-                    <BarChart3 className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <p className="text-center text-sm font-paragraph text-light-gray mt-2">N8n</p>
-                {/* Connection Line */}
-                <motion.div
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.8 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-10 right-10"
-                >
-                  <svg className="absolute w-40 h-40 -top-32 -left-32" viewBox="0 0 160 160">
-                    <motion.path
-                      d="M 120 120 Q 80 140 40 80"
-                      stroke="url(#gradient4)"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="5,5"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 2, delay: 2.1 }}
-                    />
-                    <defs>
-                      <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#60A5FA" />
-                        <stop offset="100%" stopColor="#93C5FD" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </motion.div>
-              </motion.div>
-            </div>
-
-            {/* Floating Data Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(8)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-brand-blue-light rounded-full opacity-60"
-                  initial={{
-                    x: Math.random() * 800,
-                    y: Math.random() * 400,
-                    scale: 0
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 20px rgba(249, 115, 22, 0.3)",
+                      "0 0 40px rgba(249, 115, 22, 0.6)",
+                      "0 0 20px rgba(249, 115, 22, 0.3)"
+                    ]
                   }}
-                  animate={{
-                    x: Math.random() * 800,
-                    y: Math.random() * 400,
-                    scale: [0, 1, 0]
+                  transition={{ duration: 3, repeat: Infinity, delay: 4 }}
+                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+                    <Workflow className="h-10 w-10 text-white" />
+                  </div>
+                </motion.div>
+                <div className="text-center mt-3">
+                  <h3 className="text-sm font-heading font-semibold text-foreground">Zapier</h3>
+                  <p className="text-xs text-light-gray">Trigger Actions</p>
+                </div>
+                
+                {/* Step 2 Indicator */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 6 }}
+                  className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                >
+                  2
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Make.com - Bottom Right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              viewport={{ once: true }}
+              className="absolute bottom-16 right-16"
+            >
+              <div className="relative">
+                <motion.div
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 20px rgba(147, 51, 234, 0.3)",
+                      "0 0 40px rgba(147, 51, 234, 0.6)",
+                      "0 0 20px rgba(147, 51, 234, 0.3)"
+                    ]
                   }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                    ease: "easeInOut"
+                  transition={{ duration: 3, repeat: Infinity, delay: 8 }}
+                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                    <Zap className="h-10 w-10 text-white" />
+                  </div>
+                </motion.div>
+                <div className="text-center mt-3">
+                  <h3 className="text-sm font-heading font-semibold text-foreground">Make.com</h3>
+                  <p className="text-xs text-light-gray">Process Data</p>
+                </div>
+                
+                {/* Step 3 Indicator */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 10 }}
+                  className="absolute -top-2 -right-2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                >
+                  3
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* N8n - Bottom Left */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+              viewport={{ once: true }}
+              className="absolute bottom-16 left-16"
+            >
+              <div className="relative">
+                <motion.div
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 20px rgba(239, 68, 68, 0.3)",
+                      "0 0 40px rgba(239, 68, 68, 0.6)",
+                      "0 0 20px rgba(239, 68, 68, 0.3)"
+                    ]
                   }}
-                />
-              ))}
-            </div>
+                  transition={{ duration: 3, repeat: Infinity, delay: 12 }}
+                  className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center">
+                    <BarChart3 className="h-10 w-10 text-white" />
+                  </div>
+                </motion.div>
+                <div className="text-center mt-3">
+                  <h3 className="text-sm font-heading font-semibold text-foreground">N8n</h3>
+                  <p className="text-xs text-light-gray">Generate Reports</p>
+                </div>
+                
+                {/* Step 4 Indicator */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 14 }}
+                  className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                >
+                  4
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Data Flow Animations */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 600">
+              <defs>
+                <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#22C55E" />
+                  <stop offset="100%" stopColor="#F97316" />
+                </linearGradient>
+                <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#F97316" />
+                  <stop offset="100%" stopColor="#9333EA" />
+                </linearGradient>
+                <linearGradient id="flowGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#9333EA" />
+                  <stop offset="100%" stopColor="#EF4444" />
+                </linearGradient>
+                <linearGradient id="flowGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#EF4444" />
+                  <stop offset="100%" stopColor="#22C55E" />
+                </linearGradient>
+              </defs>
+
+              {/* Flow Path 1: ChatGPT to Zapier */}
+              <motion.path
+                d="M 120 80 Q 400 40 680 80"
+                stroke="url(#flowGradient1)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 2, delay: 3, ease: "easeInOut" }}
+              />
+
+              {/* Flow Path 2: Zapier to Make.com */}
+              <motion.path
+                d="M 680 80 Q 720 300 680 520"
+                stroke="url(#flowGradient2)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 2, delay: 7, ease: "easeInOut" }}
+              />
+
+              {/* Flow Path 3: Make.com to N8n */}
+              <motion.path
+                d="M 680 520 Q 400 560 120 520"
+                stroke="url(#flowGradient3)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 2, delay: 11, ease: "easeInOut" }}
+              />
+
+              {/* Flow Path 4: N8n back to ChatGPT (completing the cycle) */}
+              <motion.path
+                d="M 120 520 Q 80 300 120 80"
+                stroke="url(#flowGradient4)"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="8,4"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 2, delay: 15, ease: "easeInOut" }}
+              />
+            </svg>
+
+            {/* Data Packets Moving Along Paths */}
+            {/* Packet 1: ChatGPT to Zapier */}
+            <motion.div
+              className="absolute w-4 h-4 bg-green-500 rounded-full shadow-lg"
+              initial={{ x: 120, y: 80, opacity: 0 }}
+              animate={{ 
+                x: [120, 400, 680], 
+                y: [80, 40, 80],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 2, 
+                delay: 3.5,
+                ease: "easeInOut",
+                times: [0, 0.5, 1]
+              }}
+            />
+
+            {/* Packet 2: Zapier to Make.com */}
+            <motion.div
+              className="absolute w-4 h-4 bg-orange-500 rounded-full shadow-lg"
+              initial={{ x: 680, y: 80, opacity: 0 }}
+              animate={{ 
+                x: [680, 720, 680], 
+                y: [80, 300, 520],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 2, 
+                delay: 7.5,
+                ease: "easeInOut",
+                times: [0, 0.5, 1]
+              }}
+            />
+
+            {/* Packet 3: Make.com to N8n */}
+            <motion.div
+              className="absolute w-4 h-4 bg-purple-500 rounded-full shadow-lg"
+              initial={{ x: 680, y: 520, opacity: 0 }}
+              animate={{ 
+                x: [680, 400, 120], 
+                y: [520, 560, 520],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 2, 
+                delay: 11.5,
+                ease: "easeInOut",
+                times: [0, 0.5, 1]
+              }}
+            />
+
+            {/* Packet 4: N8n back to ChatGPT */}
+            <motion.div
+              className="absolute w-4 h-4 bg-red-500 rounded-full shadow-lg"
+              initial={{ x: 120, y: 520, opacity: 0 }}
+              animate={{ 
+                x: [120, 80, 120], 
+                y: [520, 300, 80],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 2, 
+                delay: 15.5,
+                ease: "easeInOut",
+                times: [0, 0.5, 1]
+              }}
+            />
+
+            {/* Workflow Status Messages */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
+            >
+              <motion.div
+                key="step1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 1, 0] }}
+                transition={{ duration: 4, delay: 2 }}
+                className="bg-green-500/20 border border-green-500/30 rounded-lg px-4 py-2 mb-2"
+              >
+                <p className="text-sm font-paragraph text-green-400">📧 Customer email received</p>
+              </motion.div>
+              
+              <motion.div
+                key="step2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 1, 0] }}
+                transition={{ duration: 4, delay: 6 }}
+                className="bg-orange-500/20 border border-orange-500/30 rounded-lg px-4 py-2 mb-2"
+              >
+                <p className="text-sm font-paragraph text-orange-400">⚡ Workflow triggered</p>
+              </motion.div>
+              
+              <motion.div
+                key="step3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 1, 0] }}
+                transition={{ duration: 4, delay: 10 }}
+                className="bg-purple-500/20 border border-purple-500/30 rounded-lg px-4 py-2 mb-2"
+              >
+                <p className="text-sm font-paragraph text-purple-400">🔄 Data processed & enriched</p>
+              </motion.div>
+              
+              <motion.div
+                key="step4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 1, 0] }}
+                transition={{ duration: 4, delay: 14 }}
+                className="bg-red-500/20 border border-red-500/30 rounded-lg px-4 py-2"
+              >
+                <p className="text-sm font-paragraph text-red-400">📊 Report generated & sent</p>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Integration Benefits */}
