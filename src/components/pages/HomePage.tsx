@@ -275,6 +275,294 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Integrate Everything Section */}
+      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-background via-brand-purple/5 to-brand-blue/5">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-brand-purple-light">
+              Integrate Everything
+            </h2>
+            <p className="text-xl font-paragraph text-light-gray max-w-3xl mx-auto">
+              Seamlessly connect with your favorite platforms and tools for a unified automation experience
+            </p>
+          </motion.div>
+
+          {/* Platform Integration Animation */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Central Hub */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+            >
+              <div className="w-32 h-32 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full flex items-center justify-center shadow-2xl">
+                <Workflow className="h-16 w-16 text-white" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full animate-pulse opacity-30"></div>
+            </motion.div>
+
+            {/* Platform Logos in Circular Formation */}
+            <div className="relative w-full h-96 flex items-center justify-center">
+              {/* ChatGPT */}
+              <motion.div
+                initial={{ opacity: 0, x: -100, y: -100 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="absolute top-8 left-8"
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                    <Bot className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <p className="text-center text-sm font-paragraph text-light-gray mt-2">ChatGPT</p>
+                {/* Connection Line */}
+                <motion.div
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 1.2 }}
+                  viewport={{ once: true }}
+                  className="absolute top-10 left-10"
+                >
+                  <svg className="absolute w-40 h-40" viewBox="0 0 160 160">
+                    <motion.path
+                      d="M 40 40 Q 80 20 120 80"
+                      stroke="url(#gradient1)"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeDasharray="5,5"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 2, delay: 1.5 }}
+                    />
+                    <defs>
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#8B5CF6" />
+                        <stop offset="100%" stopColor="#3B82F6" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </motion.div>
+              </motion.div>
+
+              {/* Make.com */}
+              <motion.div
+                initial={{ opacity: 0, x: 100, y: -100 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                viewport={{ once: true }}
+                className="absolute top-8 right-8"
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center">
+                    <Zap className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <p className="text-center text-sm font-paragraph text-light-gray mt-2">Make.com</p>
+                {/* Connection Line */}
+                <motion.div
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 1.4 }}
+                  viewport={{ once: true }}
+                  className="absolute top-10 right-10"
+                >
+                  <svg className="absolute w-40 h-40 -left-32" viewBox="0 0 160 160">
+                    <motion.path
+                      d="M 120 40 Q 80 20 40 80"
+                      stroke="url(#gradient2)"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeDasharray="5,5"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 2, delay: 1.7 }}
+                    />
+                    <defs>
+                      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#A855F7" />
+                        <stop offset="100%" stopColor="#8B5CF6" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </motion.div>
+              </motion.div>
+
+              {/* Zapier */}
+              <motion.div
+                initial={{ opacity: 0, x: -100, y: 100 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 1, delay: 1.0 }}
+                viewport={{ once: true }}
+                className="absolute bottom-8 left-8"
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
+                    <Workflow className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <p className="text-center text-sm font-paragraph text-light-gray mt-2">Zapier</p>
+                {/* Connection Line */}
+                <motion.div
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 1.6 }}
+                  viewport={{ once: true }}
+                  className="absolute bottom-10 left-10"
+                >
+                  <svg className="absolute w-40 h-40 -top-32" viewBox="0 0 160 160">
+                    <motion.path
+                      d="M 40 120 Q 80 140 120 80"
+                      stroke="url(#gradient3)"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeDasharray="5,5"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 2, delay: 1.9 }}
+                    />
+                    <defs>
+                      <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#3B82F6" />
+                        <stop offset="100%" stopColor="#60A5FA" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </motion.div>
+              </motion.div>
+
+              {/* N8n */}
+              <motion.div
+                initial={{ opacity: 0, x: 100, y: 100 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+                viewport={{ once: true }}
+                className="absolute bottom-8 right-8"
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center">
+                    <BarChart3 className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <p className="text-center text-sm font-paragraph text-light-gray mt-2">N8n</p>
+                {/* Connection Line */}
+                <motion.div
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 1.8 }}
+                  viewport={{ once: true }}
+                  className="absolute bottom-10 right-10"
+                >
+                  <svg className="absolute w-40 h-40 -top-32 -left-32" viewBox="0 0 160 160">
+                    <motion.path
+                      d="M 120 120 Q 80 140 40 80"
+                      stroke="url(#gradient4)"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeDasharray="5,5"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 2, delay: 2.1 }}
+                    />
+                    <defs>
+                      <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#60A5FA" />
+                        <stop offset="100%" stopColor="#93C5FD" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Floating Data Particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-brand-blue-light rounded-full opacity-60"
+                  initial={{
+                    x: Math.random() * 800,
+                    y: Math.random() * 400,
+                    scale: 0
+                  }}
+                  animate={{
+                    x: Math.random() * 800,
+                    y: Math.random() * 400,
+                    scale: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Integration Benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <Workflow className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                Seamless Workflows
+              </h3>
+              <p className="text-light-gray font-paragraph leading-relaxed">
+                Connect your favorite tools and create automated workflows that work across platforms
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                Lightning Fast
+              </h3>
+              <p className="text-light-gray font-paragraph leading-relaxed">
+                Real-time data synchronization and instant automation triggers across all platforms
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-purple-light to-brand-purple-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-heading font-semibold mb-4 text-foreground">
+                Team Collaboration
+              </h3>
+              <p className="text-light-gray font-paragraph leading-relaxed">
+                Enable your entire team to work together with shared integrations and workflows
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Products Showcase */}
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-background/50">
         <div className="max-w-[120rem] mx-auto">
