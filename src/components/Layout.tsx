@@ -62,22 +62,24 @@ export default function Layout() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-light-gray/20">
         <nav className="max-w-[120rem] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <Image 
-                src="https://static.wixstatic.com/media/1ba855_db0e81715f224cb7aa1ab5e633e07d68~mv2.png" 
-                alt="Zapshere Logo" 
-                width={40}
-                className="h-10 w-10"
-              />
-              <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
-                Zapshere
-              </span>
-            </Link>
+          <div className="grid grid-cols-3 items-center h-20">
+            {/* Logo - Left Column */}
+            <div className="flex justify-start">
+              <Link to="/" className="flex items-center space-x-3">
+                <Image 
+                  src="https://static.wixstatic.com/media/1ba855_db0e81715f224cb7aa1ab5e633e07d68~mv2.png" 
+                  alt="Zapshere Logo" 
+                  width={40}
+                  className="h-10 w-10"
+                />
+                <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
+                  Zapshere
+                </span>
+              </Link>
+            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-12">
+            {/* Desktop Navigation - Center Column */}
+            <div className="hidden lg:flex items-center justify-center space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -119,8 +121,11 @@ export default function Layout() {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground ml-8 px-6 py-3">
+            </div>
+
+            {/* CTA Button - Right Column */}
+            <div className="hidden lg:flex justify-end">
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>
