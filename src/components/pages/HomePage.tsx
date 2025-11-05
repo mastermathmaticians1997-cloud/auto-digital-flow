@@ -473,7 +473,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 overflow-hidden">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -490,53 +490,121 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial._id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-background/30 border-light-gray/20 h-full">
-                  <CardContent className="p-10">
-                    <div className="flex items-center gap-1 mb-6">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-5 w-5 ${
-                            i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed">
-                      "{testimonial.testimonialText}"
-                    </p>
-                    <div className="flex items-center gap-4">
-                      {testimonial.clientPhoto && (
-                        <Image
-                          src={testimonial.clientPhoto}
-                          alt={testimonial.clientName || 'Client'}
-                          width={60}
-                          height={60}
-                          className="w-12 h-12 rounded-full object-cover"
-                        />
-                      )}
-                      <div>
-                        <h4 className="font-heading font-semibold text-foreground">
-                          {testimonial.clientName}
-                        </h4>
-                        <p className="text-sm text-light-gray font-paragraph">
-                          {testimonial.clientTitleCompany}
-                        </p>
+          {/* Animated Scrolling Carousel */}
+          <div className="relative">
+            <motion.div
+              className="flex gap-8"
+              animate={{
+                x: [0, -100 * testimonials.length]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: testimonials.length * 8,
+                  ease: "linear"
+                }
+              }}
+              whileHover={{ animationPlayState: "paused" }}
+            >
+              {/* First set of testimonials */}
+              {testimonials.map((testimonial) => (
+                <motion.div
+                  key={`first-${testimonial._id}`}
+                  className="flex-shrink-0 w-96"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300">
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-1 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-5 w-5 ${
+                              i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
+                            }`}
+                          />
+                        ))}
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                      <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
+                        "{testimonial.testimonialText}"
+                      </p>
+                      <div className="flex items-center gap-4">
+                        {testimonial.clientPhoto && (
+                          <Image
+                            src={testimonial.clientPhoto}
+                            alt={testimonial.clientName || 'Client'}
+                            width={48}
+                            height={48}
+                            className="w-12 h-12 rounded-full object-cover"
+                          />
+                        )}
+                        <div>
+                          <h4 className="font-heading font-semibold text-foreground text-sm">
+                            {testimonial.clientName}
+                          </h4>
+                          <p className="text-xs text-light-gray font-paragraph">
+                            {testimonial.clientTitleCompany}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {testimonials.map((testimonial) => (
+                <motion.div
+                  key={`second-${testimonial._id}`}
+                  className="flex-shrink-0 w-96"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="bg-background/30 border-light-gray/20 h-full hover:bg-background/40 transition-colors duration-300">
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-1 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-5 w-5 ${
+                              i < (testimonial.rating || 5) ? 'text-brand-purple-accent fill-current' : 'text-light-gray/30'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-light-gray font-paragraph mb-8 italic leading-relaxed text-sm">
+                        "{testimonial.testimonialText}"
+                      </p>
+                      <div className="flex items-center gap-4">
+                        {testimonial.clientPhoto && (
+                          <Image
+                            src={testimonial.clientPhoto}
+                            alt={testimonial.clientName || 'Client'}
+                            width={48}
+                            height={48}
+                            className="w-12 h-12 rounded-full object-cover"
+                          />
+                        )}
+                        <div>
+                          <h4 className="font-heading font-semibold text-foreground text-sm">
+                            {testimonial.clientName}
+                          </h4>
+                          <p className="text-xs text-light-gray font-paragraph">
+                            {testimonial.clientTitleCompany}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+            
+            {/* Gradient overlays for smooth edge effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
           </div>
         </div>
       </section>
