@@ -66,12 +66,7 @@ export default function Layout() {
             {/* Logo - Left Column */}
             <div className="flex justify-start">
               <Link to="/" className="flex items-center space-x-3">
-                <Image 
-                  src="https://static.wixstatic.com/media/1ba855_db0e81715f224cb7aa1ab5e633e07d68~mv2.png" 
-                  alt="Zapshere Logo" 
-                  width={40}
-                  className="h-10 w-10"
-                />
+
                 <span className="text-2xl font-heading font-bold bg-gradient-to-r from-brand-purple-light to-brand-blue-light bg-clip-text text-transparent">
                   Zapshere
                 </span>
@@ -184,12 +179,10 @@ export default function Layout() {
           </div>
         </nav>
       </header>
-
       {/* Main Content */}
       <main className="pt-20">
         <Outlet />
       </main>
-
       {/* Footer */}
       <footer className="bg-background/50 border-t border-light-gray/20 py-20">
         <div className="max-w-[120rem] mx-auto px-6 sm:px-8 lg:px-12">
@@ -316,7 +309,6 @@ export default function Layout() {
           </div>
         </div>
       </footer>
-
       {/* Floating Chatbot Demo */}
       <motion.div
         initial={{ scale: 0 }}
