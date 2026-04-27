@@ -326,11 +326,11 @@ export default function HomePage() {
                   const totalPlatforms = platforms.length;
                   const angle = (index / totalPlatforms) * Math.PI; // Semi-circle (0 to π)
                   const radius = 280;
-                  const centerX = 375;
-                  const centerY = 300;
+                  const centerX = 50; // 50% for perfect horizontal centering
+                  const centerY = 50; // 50% for perfect vertical centering
                   
-                  const finalX = centerX + Math.cos(angle) * radius;
-                  const finalY = centerY - Math.sin(angle) * radius * 0.6;
+                  const finalX = centerX + (Math.cos(angle) * radius) / 7.5; // Normalize to percentage
+                  const finalY = centerY - (Math.sin(angle) * radius * 0.6) / 4; // Normalize to percentage
                   
                   return (
                     <motion.div
