@@ -19,8 +19,10 @@ const useAnimatedDataStream = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Get the canvas container dimensions
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width || window.innerWidth;
+    canvas.height = rect.height || window.innerHeight;
 
     const particles: Array<{
       x: number;
@@ -115,8 +117,9 @@ const useAnimatedDataStream = () => {
     animate();
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width || window.innerWidth;
+      canvas.height = rect.height || window.innerHeight;
     };
 
     window.addEventListener('resize', handleResize);
@@ -165,14 +168,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden flex items-center justify-center\">
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full\"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
         
-        <div className="relative z-10 flex items-center justify-center h-full px-4">
+        <div className="relative z-10 flex items-center justify-center w-full h-full px-4\">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
