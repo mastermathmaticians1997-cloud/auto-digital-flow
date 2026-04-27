@@ -176,13 +176,13 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center max-w-6xl mx-auto"
           >
             <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-purple-light via-brand-blue to-brand-blue-light bg-clip-text text-transparent md:text-6xl"
             >
               Intelligent Automation for a Smarter Tomorrow
@@ -191,7 +191,7 @@ export default function HomePage() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl md:text-2xl font-paragraph mb-8 text-light-gray max-w-4xl mx-auto"
             >
               Transform your business with cutting-edge AI automation, intelligent workflows, and data-driven digital marketing strategies
@@ -200,7 +200,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg">

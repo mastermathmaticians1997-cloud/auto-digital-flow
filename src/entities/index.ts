@@ -25,9 +25,9 @@ export interface CaseStudies {
   resultsAchieved?: string;
   /** @wixFieldType number */
   roiPercentage?: number;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   chartImage?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   mainImage?: string;
   /** @wixFieldType date */
   dateCompleted?: Date | string;
@@ -48,7 +48,7 @@ export interface Industries {
   shortDescription?: string;
   /** @wixFieldType text */
   detailedDescription?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   industryImage?: string;
   /** @wixFieldType text */
   keyBenefits?: string;
@@ -96,7 +96,7 @@ export interface Products {
   productName?: string;
   /** @wixFieldType text */
   productType?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   gridImage?: string;
   /** @wixFieldType text */
   shortDescription?: string;
@@ -129,7 +129,7 @@ export interface Resources {
   publicationDate?: Date | string;
   /** @wixFieldType text */
   author?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   thumbnailImage?: string;
   /** @wixFieldType url */
   externalUrl?: string;
@@ -150,7 +150,7 @@ export interface Services {
   tagline?: string;
   /** @wixFieldType text */
   description?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   serviceImage?: string;
   /** @wixFieldType text */
   keyBenefits?: string;
@@ -175,7 +175,7 @@ export interface Testimonials {
   clientTitleCompany?: string;
   /** @wixFieldType text */
   testimonialText?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   clientPhoto?: string;
   /** @wixFieldType number */
   rating?: number;
