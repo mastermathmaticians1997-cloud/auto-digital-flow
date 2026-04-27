@@ -359,7 +359,7 @@ export default function HomePage() {
                         transition={{ 
                           duration: 3, 
                           repeat: Infinity, 
-                          delay: platformIndex * 0.2,
+                          delay: index * 0.2,
                           ease: "easeInOut"
                         }}
                         className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
