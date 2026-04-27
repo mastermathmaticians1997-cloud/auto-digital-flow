@@ -321,47 +321,25 @@ export default function HomePage() {
                 // Create multiple sets for seamless loop
                 const duplicatedPlatforms = [...platforms, ...platforms, ...platforms];
                 
-                return duplicatedPlatforms.map((platform, index) => {
+                return platforms.map((platform, index) => {
                   // Calculate position along semi-circular path
                   const totalPlatforms = platforms.length;
-                  const platformIndex = index % totalPlatforms;
-                  const angle = (platformIndex / totalPlatforms) * Math.PI; // Semi-circle (0 to π)
+                  const angle = (index / totalPlatforms) * Math.PI; // Semi-circle (0 to π)
                   const radius = 280;
                   const centerX = 375;
                   const centerY = 300;
                   
+                  const finalX = centerX + Math.cos(angle) * radius;
+                  const finalY = centerY - Math.sin(angle) * radius * 0.6;
+                  
                   return (
                     <motion.div
-                      key={`${platform.name}-${Math.floor(index / totalPlatforms)}`}
+                      key={`${platform.name}-${index}`}
                       className="absolute"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: (index % totalPlatforms) * 0.05 }}
+                      initial={{ opacity: 0, scale: 0.8, x: centerX, y: centerY }}
+                      whileInView={{ opacity: 1, scale: 1, x: finalX, y: finalY }}
+                      transition={{ duration: 0.8, delay: index * 0.05, ease: "easeOut" }}
                       viewport={{ once: true }}
-                      animate={{
-                        x: centerX + Math.cos(angle) * radius,
-                        y: centerY - Math.sin(angle) * radius * 0.6, // Flatten the semi-circle slightly
-                        rotate: [0, 360]
-                      }}
-                      transition={{
-                        x: {
-                          duration: 20,
-                          repeat: Infinity,
-                          ease: "linear" as const,
-                          delay: -(index / totalPlatforms) * 20 // Stagger the start positions
-                        },
-                        y: {
-                          duration: 20,
-                          repeat: Infinity,
-                          ease: "linear" as const,
-                          delay: -(index / totalPlatforms) * 20
-                        },
-                        rotate: {
-                          duration: 15,
-                          repeat: Infinity,
-                          ease: "linear" as const
-                        }
-                      }}
                       style={{
                         transform: 'translate(-50%, -50%)'
                       }}
@@ -369,7 +347,6 @@ export default function HomePage() {
                         scale: 1.2, 
                         zIndex: 10
                       }}
-                      whileHoverTransition={{ duration: 0.2 }}
                     >
                       <motion.div
                         animate={{ 
